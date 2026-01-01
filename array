@@ -1,0 +1,20 @@
+def max_subarray_sum(arr):
+    n = len(arr)
+    max_sum = float('-inf')
+    current_sum = 0
+    has_positive = False
+
+    for num in arr:
+        current_sum = max(num, current_sum + num)
+        max_sum = max(max_sum, current_sum)
+        if num > 0:
+            has_positive = True
+
+    # If no positive number exists, return 0
+    return max_sum if has_positive else 0
+
+
+# Example usage:
+print(max_subarray_sum([-1, -2, -3]))        # Output: 0 (no positive number)
+print(max_subarray_sum([1, -2, 3, 4, -1]))   # Output: 7 (subarray [3,4])
+print(max_subarray_sum([-2, -3, 4, -1, -2, 1, 5, -3]))  # Output: 7 (subarray [4,-1,-2,1,5])
