@@ -1,0 +1,20 @@
+#Imagine you are working as an intern at a music streaming company. Your boss wants to create a new 'Loop Mode' feature. When a user creates a playlist, the system needs to automatically generate a queue that plays the entire playlist once, and then immediately plays the exact same playlist again from the start. Write a program that takes any list of songs (represented by ID numbers) and returns a new list that plays the sequence twice back-to-back. in python
+
+def loop_mode(playlist):
+    """
+    Generates a queue that plays the playlist twice back-to-back.
+
+    Parameters:
+    playlist (list): A list of song IDs (integers or strings).
+
+    Returns:
+    list: A new list with the playlist repeated twice.
+    """
+    return playlist + playlist
+
+
+# Example usage:
+playlist = [101, 102, 103, 104]   # Song IDs
+queue = loop_mode(playlist)
+print("Original Playlist:", playlist)
+print("Loop Mode Queue:", queue)
